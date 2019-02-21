@@ -68,3 +68,8 @@ output "worker_iam_role_arn" {
   description = "default IAM role ARN for EKS worker groups"
   value       = "${aws_iam_role.workers.arn}"
 }
+
+output "worker_asg_iam_policy_arn" {
+  description = "Policy ARN for giving EKS worker nodes autoscaling permissions"
+  value       = "${aws_iam_policy.worker_autoscaling.arn}"
+}
